@@ -5,6 +5,10 @@ plugins {
     application
 }
 
+object Versions {
+    const val KOTEST = "5.5.4"
+}
+
 group = "me.parker"
 version = "1.0-SNAPSHOT"
 
@@ -14,6 +18,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("io.kotest:kotest-runner-junit5:${Versions.KOTEST}")
 }
 
 tasks.test {
