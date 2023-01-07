@@ -9,6 +9,10 @@ class CarName(val name: String) {
     }
 
     private fun checkValidName(inputName: String) {
+        if (inputName.isEmpty()) {
+            throw IllegalArgumentException("자동차 이름은 비어있을 수 없습니다.")
+        }
+
         if (inputName.length > 5) {
             throw IllegalArgumentException("자동차 이름의 길이는 5자를 넘을 수 없습니다.")
         }

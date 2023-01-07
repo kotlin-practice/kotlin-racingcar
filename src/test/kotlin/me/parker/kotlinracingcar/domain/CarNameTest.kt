@@ -4,7 +4,6 @@ import io.kotest.assertions.throwables.shouldNotThrow
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.inspectors.forAll
-import java.lang.IllegalArgumentException
 
 class CarNameTest : DescribeSpec({
     describe("CarName 객체 생성") {
@@ -14,6 +13,14 @@ class CarNameTest : DescribeSpec({
                     shouldNotThrow<Exception> {
                         CarName(it)
                     }
+                }
+            }
+        }
+
+        context("빈 문자열이 주어지면") {
+            it("IllegalArgumentException 예외를 던진다.") {
+                shouldThrow<IllegalArgumentException> {
+                    CarName("")
                 }
             }
         }
