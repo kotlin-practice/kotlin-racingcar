@@ -4,6 +4,7 @@ import io.kotest.assertions.throwables.shouldNotThrow
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.inspectors.forAll
+import io.kotest.matchers.string.shouldNotBeEmpty
 
 class CarNameTest : DescribeSpec({
     describe("CarName 객체 생성") {
@@ -13,6 +14,7 @@ class CarNameTest : DescribeSpec({
                     shouldNotThrow<Exception> {
                         CarName(it)
                     }
+                    CarName(it).name.shouldNotBeEmpty()
                 }
             }
         }

@@ -22,21 +22,27 @@ class CarNamesTest : DescribeSpec({
             }
         }
         context("입력 문자열에 공백 또는 NULL이 주어지면") {
-            shouldThrow<IllegalArgumentException> {
-                CarNames(emptyNames)
+            it("IllegalArgumentException 예외를 던진다.") {
+                shouldThrow<IllegalArgumentException> {
+                    CarNames(emptyNames)
+                }
             }
         }
         context("입력 문자열에 쉼표 사이사이 공백이 주어진 경우") {
-            namesIncludeEmpty.forAll {
-                shouldThrow<IllegalArgumentException> {
-                    CarNames(it)
+            it("IllegalArgumentException 예외를 던진다.") {
+                namesIncludeEmpty.forAll {
+                    shouldThrow<IllegalArgumentException> {
+                        CarNames(it)
+                    }
                 }
             }
         }
         context("입력 문자열 이름에 잘못된 자동차 이름이 포함된 경우") {
-            namesIncludeInvalidName.forAll {
-                shouldThrow<IllegalArgumentException> {
-                    CarNames(it)
+            it("IllegalArgumentException 예외를 던진다.") {
+                namesIncludeInvalidName.forAll {
+                    shouldThrow<IllegalArgumentException> {
+                        CarNames(it)
+                    }
                 }
             }
         }
