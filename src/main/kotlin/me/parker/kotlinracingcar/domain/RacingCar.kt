@@ -21,4 +21,7 @@ class RacingCar(carName: String) {
         return moveNumber >= 4;
     }
 
+    override fun toString(): String {
+        return "RacingCar(carName=$carName, position=$position)"
+    }
 }
