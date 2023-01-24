@@ -31,6 +31,8 @@ class RacingCarsTest : DescribeSpec({
         }
     }
 
+    // TODO: RacingCars 객체는 갖고 있는 RacingCar 들을 경주시키는 메서드가 필요하다.
+
     describe("경주 자동차들 중에서 가장 멀리 이동한 자동차들(0 ~ N개) 구하기") {
         context("searchTheFurthestCars 메서드를 호출하면") {
             val numToGo = 5
