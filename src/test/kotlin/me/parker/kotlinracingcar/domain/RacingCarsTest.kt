@@ -5,6 +5,7 @@ import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.collections.shouldBeEmpty
 import io.kotest.matchers.collections.shouldHaveSize
+import io.kotest.matchers.collections.shouldNotBeEmpty
 import java.lang.Exception
 import java.lang.IllegalArgumentException
 
@@ -31,7 +32,22 @@ class RacingCarsTest : DescribeSpec({
         }
     }
 
-    // TODO: RacingCars 객체는 갖고 있는 RacingCar 들을 경주시키는 메서드가 필요하다.
+    describe("경주 자동차들 경주 경기하기") {
+        context("race(MoveCount) 메서드를 호출하면") {
+            it("경주 결과는 객체 내부의 레이싱 자동차 리스트에 기록된다.") {
+                val racingCarList: List<RacingCar> = CarNameTest.normalNames
+                    .map { name -> RacingCar(name) }
+                    .toList()
+
+                val racingCars = RacingCars(racingCarList)
+                val moveCount = MoveCount(10)
+
+                racingCars.searchTheFurthestCars().shouldBeEmpty()
+                racingCars.race(moveCount)
+                racingCars.searchTheFurthestCars().shouldNotBeEmpty()
+            }
+        }
+    }
 
     describe("경주 자동차들 중에서 가장 멀리 이동한 자동차들(0 ~ N개) 구하기") {
         context("searchTheFurthestCars 메서드를 호출하면") {
