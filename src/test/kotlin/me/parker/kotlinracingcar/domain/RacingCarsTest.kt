@@ -14,7 +14,7 @@ class RacingCarsTest : DescribeSpec({
         context("정상적으로 생성된 RacingCar 객체 리스트가 주어지면") {
             it("예외없이 RacingCars 객체를 생성하고 반환한다.") {
                 val racingCarList: List<RacingCar> = CarNameTest.normalNames
-                    .map { name -> RacingCar(name) }
+                    .map { name -> RacingCar(CarName(name)) }
                     .toList()
 
                 shouldNotThrow<Exception> {
@@ -36,7 +36,7 @@ class RacingCarsTest : DescribeSpec({
         context("race(MoveCount) 메서드를 호출하면") {
             it("경주 결과는 객체 내부의 레이싱 자동차 리스트에 기록된다.") {
                 val racingCarList: List<RacingCar> = CarNameTest.normalNames
-                    .map { name -> RacingCar(name) }
+                    .map { name -> RacingCar(CarName(name)) }
                     .toList()
 
                 val racingCars = RacingCars(racingCarList)
@@ -53,7 +53,7 @@ class RacingCarsTest : DescribeSpec({
         context("searchTheFurthestCars 메서드를 호출하면") {
             val numToGo = 5
             val racingCarList: List<RacingCar> = CarNameTest.normalNames
-                .map { name -> RacingCar(name) }
+                .map { name -> RacingCar(CarName(name)) }
                 .toList()
 
             it("모든 경주 자동차가 제자리(거리 == 0)인 경우, 빈 리스트를 반환한다.") {
