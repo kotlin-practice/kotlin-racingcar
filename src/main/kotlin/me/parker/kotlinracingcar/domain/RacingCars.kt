@@ -2,7 +2,7 @@ package me.parker.kotlinracingcar.domain
 
 import me.parker.kotlinracingcar.random.RandomGenerator
 
-class RacingCars(private val racingCarList: List<RacingCar>) {
+class RacingCars(val racingCarList: List<RacingCar>) {
     companion object {
         const val START_RANDOM_NUMBER = 0
         const val END_RANDOM_NUMBER = 9

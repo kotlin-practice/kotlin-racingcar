@@ -1,6 +1,6 @@
 package me.parker.kotlinracingcar.domain
 
-class RacingCar(private val carName: CarName) {
+class RacingCar(val carName: CarName) {
     var position: Int
 
     init {

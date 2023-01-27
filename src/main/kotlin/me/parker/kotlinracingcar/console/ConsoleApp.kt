@@ -20,11 +20,17 @@ fun main(args: Array<String>) {
     println("입력 결과: $inputMoveCount")
 
     println(">> 자동차 경주 시작!! <<")
+    println(">  자동차 경주중...")
     val racingCars = RacingCars(CarNames(inputNames).carNamesList.map { carName ->
         RacingCar(carName)
     })
     racingCars.race(MoveCount(inputMoveCount))
 
     println(">> 자동차 경주 결과 <<")
+    racingCars.racingCarList.forEach {
+            racingCar ->
+        print(racingCar.carName.toString().padEnd(7, ' ') + ": ")
+        println("-".repeat(racingCar.position))
+    }
     print("우승자: ${racingCars.searchTheFurthestCars()}")
 }

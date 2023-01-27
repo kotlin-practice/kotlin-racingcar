@@ -27,6 +27,6 @@ class CarName(val name: String) {
     }
 
     override fun toString(): String {
-        return "CarName(name='$name')"
+        return name
     }
 }
