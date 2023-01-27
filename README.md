@@ -16,20 +16,13 @@
 3. 시도한 횟수만큼 자동차가 이동하고, 이 이동한 거리를 콘솔로 출력한다.
 4. 시도횟수가 끝나면 가장 멀리 이동한 자동차(들) 우승자를 출력한다.
 
-## 객체 정의
-- 도메인
-  - 자동차 경주
-    - 필드: 시도횟수, 참여할 자동차 리스트
-    - 메서드: 자동차 생성, 
-  - 자동차
-    - 필드: 이름(VO), 이동한 거리
-    - 메서드: 
-- VO
-  - 자동차이름(CarName)
-    - 이름 규칙
-      - 글자수가 5 이하
-      - 알파벳 대소문자만
-- 유틸
-  - 랜덤 번호 생성기
+## 프로젝트 실행 방법
 
+```shell
+# build and create jar file
+./gradlew clean build
+
+# execute jar
+java -jar build/libs/kotlin-racingcar-1.0-SNAPSHOT.jar
+```
 
